@@ -1,5 +1,5 @@
 # Bitcointalk Paste URL Formatter
-Automatically converts pasted Bitcointalk URLs to [url=...]Text[/url] BBCode
+Automatically converts pasted URLs to [url=...]Text[/url] BBCode
 
 ## How to install
 - Install Tampermonkey either for desktop (most browsers) and mobile (Edge or any browsers supporting extensions).
