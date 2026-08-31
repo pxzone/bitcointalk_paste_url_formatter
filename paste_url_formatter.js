@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         Bitcointalk Auto URL BBCode
-// @description  Automatically converts pasted Bitcointalk URLs to [url=...]Text[/url] BBCode
+// @name         Bitcointalk Paste URL Formatter
 // @namespace    https://bitcointalk.org/
+// @version      1.0
+// @description  Automatically formats pasted URLs as Bitcointalk [url=URL]change_text[/url] BBCode. Works only on Bitcointalk.org.
 // @match        https://bitcointalk.org/*
 // @grant        none
-// @version      1.0.0
 // @author       PX-Z
 // ==/UserScript==
 
@@ -27,10 +27,9 @@
         const anchor_text = "change_text";
 
         // Only process Bitcointalk URLs
-        if (!/^https?:\/\/(?:www\.)?bitcointalk\.org\//i.test(text)) {
+        if (!/^https?:\/\/\S+$/i.test(text)) {
             return;
         }
-
         const bbcode = `[url=${text}]${anchor_text}[/url]`;
 
         e.preventDefault();
