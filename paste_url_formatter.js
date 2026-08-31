@@ -17,8 +17,7 @@
         // Only handle textareas / text inputs / contenteditable
         if (
             !(target instanceof HTMLTextAreaElement) &&
-            !(target instanceof HTMLInputElement) &&
-            !target.isContentEditable
+            !(target instanceof HTMLInputElement)
         ) {
             return;
         }
