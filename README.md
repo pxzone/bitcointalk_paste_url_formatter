@@ -1,4 +1,4 @@
-# Bitcointalk Paste URL Formatter
+# [Userscript] Bitcointalk Paste URL Formatter
 Automatically converts pasted URLs to [url=...]Text[/url] BBCode
 
 ## How to install
