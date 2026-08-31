@@ -2,7 +2,7 @@
 // @name         Bitcointalk Paste URL Formatter
 // @namespace    https://bitcointalk.org/
 // @version      1.0
-// @description  Automatically formats pasted URLs as Bitcointalk [url=URL]change_text[/url] BBCode. Works only on Bitcointalk.org.
+// @description  Automatically formats pasted URLs as Bitcointalk [url=URL]change_text[/url] BBCode.
 // @match        https://bitcointalk.org/*
 // @grant        none
 // @author       PX-Z
