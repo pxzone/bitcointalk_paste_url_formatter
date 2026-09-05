@@ -3,7 +3,7 @@
 // @namespace    https://bitcointalk.org/
 // @version      1.0
 // @description  Automatically formats copy/pasted URLs as [url=URL]change_text[/url] BBCode.
-// @match        https://bitcointalk.org/*
+// @match        https://bitcointalk.org/index.php?action=post*
 // @grant        none
 // @author       PX-Z
 // ==/UserScript==
