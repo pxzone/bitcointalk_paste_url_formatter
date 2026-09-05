@@ -14,43 +14,36 @@
     document.addEventListener('paste', function (e) {
         const target = e.target;
 
-        // Only handle textareas / text inputs / contenteditable
-        if (
-            !(target instanceof HTMLTextAreaElement) &&
-            !(target instanceof HTMLInputElement)
-        ) {
+        // Only handle textareas
+        if (!(target instanceof HTMLTextAreaElement)) {
             return;
         }
 
         const text = e.clipboardData.getData('text/plain').trim();
-        const anchor_text = "change_text";
 
-        // Only process Bitcointalk URLs
+        // Only process a single HTTP/HTTPS URL
         if (!/^https?:\/\/\S+$/i.test(text)) {
             return;
         }
-        const bbcode = `[url=${text}]${anchor_text}[/url]`;
+
+        const bbcode = `[url=${text}]change_text[/url]`;
 
         e.preventDefault();
 
-        // textarea / input
-        if (
-            target instanceof HTMLTextAreaElement ||
-            target instanceof HTMLInputElement
-        ) {
-            const start = target.selectionStart;
-            const end = target.selectionEnd;
+        const start = target.selectionStart;
+        const end = target.selectionEnd;
 
-            target.setRangeText(
-                bbcode,
-                start,
-                end,
-                'end'
-            );
+        target.setRangeText(
+            bbcode,
+            start,
+            end,
+            'end'
+        );
 
-            // Notify site's JS that the value changed
-            target.dispatchEvent(new Event('input', { bubbles: true }));
-        }
+        // Notify site's JavaScript that the textarea changed
+        target.dispatchEvent(new Event('input', {
+            bubbles: true
+        }));
     });
 
 })();
